@@ -1,3 +1,4 @@
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,6 +19,11 @@ public class Kalkulacka {
     @When("Uzivatel secte tato dve cisla")
     public void uzivatelSecteTatoDveCisla() {
         vypoctenyVysledek = prvCislo + druCislo;
+    }
+
+    @When("Uzivatel vydeli tato dve cisla")
+    public void uzivatelVydeliTatoDveCisla() {
+        vypoctenyVysledek = prvCislo / druCislo;
     }
 
     @Then("Uzivatel vidi na kalkulacce vysledek {int}")

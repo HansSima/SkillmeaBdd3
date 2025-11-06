@@ -2,6 +2,7 @@ Feature: pokus
 
 #Toto je komentar
 
+
   Scenario: Pokusny test 1
     Given Toto je nastaveni pocatecnich podminek
     And Toto je dalsi nastaveni pocatecnich podminek
@@ -20,4 +21,25 @@ Feature: pokus
     Given Uzivatel ma zadany dve cisla 5 a 8
     When Uzivatel secte tato dve cisla
     Then Uzivatel vidi na kalkulacce vysledek 13
+    
+  Scenario: Kalkulacka - 2
+    Given Uzivatel ma zadany dve cisla 125 a 200
+    When Uzivatel secte tato dve cisla
+    Then Uzivatel vidi na kalkulacce vysledek 325
 
+  #Req-001 - Deleni cisel
+  Scenario: Kalkulacka - deleni
+    Given Uzivatel ma zadany dve cisla 15 a 5
+    When Uzivatel vydeli tato dve cisla
+    Then Uzivatel vidi na kalkulacce vysledek 3
+
+  Scenario Outline: Kalkulacka - scitani cisel vice scenaru
+    Given Uzivatel ma zadany dve cisla <prvniCislo> a <druheCislo>
+    When Uzivatel secte tato dve cisla
+    Then Uzivatel vidi na kalkulacce vysledek <vysledek>
+
+    Examples:
+      | prvniCislo | druheCislo | vysledek |
+      | 5          | 8          | 13       |
+      | 20         | 30         | 50       |
+      | 222        | 228        | 451      |
