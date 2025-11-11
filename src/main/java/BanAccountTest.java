@@ -39,8 +39,10 @@ public class BanAccountTest {
 
     @When("Uzivatel prevede castku {int} kc z prvniho na druhy bankovni ucet")
     public void uzivatelPrevedeCastkuKcZPrvnihoNaDruhyBankovniUcet(int castkaPrevodu) {
-        prvniBankovniUcet.withdraw(castkaPrevodu);
-        druhyBankovniUcet.transfer(castkaPrevodu);
+        boolean povedlSePrevod = prvniBankovniUcet.withdraw(castkaPrevodu);
+        if(povedlSePrevod){
+            druhyBankovniUcet.transfer(castkaPrevodu);
+        }
     }
 
     @And("Na druhem uzivatelskem uctu je {int} kc")

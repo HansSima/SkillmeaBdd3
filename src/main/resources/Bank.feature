@@ -19,6 +19,6 @@ Feature: Bank
   Scenario: Prevod z uctu na ucet
     Given Uzivatel ma bankovni ucet s 2000 kc
     And Uzivatel ma druhy bankovni ucet s 1000 kc
-    When Uzivatel prevede castku 700 kc z prvniho na druhy bankovni ucet
-    Then Na uzivatelskem uctu je 1300 kc
-    And Na druhem uzivatelskem uctu je 1700 kc
+    When Uzivatel prevede castku 2100 kc z prvniho na druhy bankovni ucet
+    Then Na uzivatelskem uctu je 2000 kc
+    And Na druhem uzivatelskem uctu je 1000 kc
