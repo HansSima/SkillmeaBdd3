@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class BanAccountTest {
     BankAccount prvniBankovniUcet;
+    BankAccount druhyBankovniUcet;
+
 
     @Given("Uzivatel ma bankovni ucet s {int} kc")
     public void uzivatelMaBankovniUcetSKc(int pocatecniZustatekNaUctu) {
@@ -31,17 +33,17 @@ public class BanAccountTest {
     }
 
     @And("Uzivatel ma druhy bankovni ucet s {int} kc")
-    public void uzivatelMaDruhyBankovniUcetSKc(int arg0) {
-
+    public void uzivatelMaDruhyBankovniUcetSKc(int pocatecniZustatekNaUctu) {
+        druhyBankovniUcet = new BankAccount(pocatecniZustatekNaUctu);
     }
 
     @When("Uzivatel prevede castku {int} kc z prvniho na druhy bankovni ucet")
-    public void uzivatelPrevedeCastkuKcZPrvnihoNaDruhyBankovniUcet(int arg0) {
+    public void uzivatelPrevedeCastkuKcZPrvnihoNaDruhyBankovniUcet(int castkaPrevodu) {
 
     }
 
     @And("Na druhem uzivatelskem uctu je {int} kc")
-    public void naDruhemUzivatelskemUctuJeKc(int arg0) {
-
+    public void naDruhemUzivatelskemUctuJeKc(int predpokladanyZustateknaUctu) {
+        assertEquals(predpokladanyZustateknaUctu, druhyBankovniUcet.getAccountBalance());
     }
 }
