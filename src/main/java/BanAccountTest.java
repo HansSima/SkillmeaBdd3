@@ -21,7 +21,6 @@ public class BanAccountTest {
         assertEquals(predpokladanyZustatekNaUctu, prvniBankovniUcet.getAccountBalance(), "Test spadl");
     }
 
-
     @When("Uzivatel si na tento ucet prevede {int} kc")
     public void uzivatelSiNaTentoUcetPrevedeKc(int castkaKPrevodu) {
         prvniBankovniUcet.transfer(castkaKPrevodu);
