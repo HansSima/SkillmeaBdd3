@@ -22,3 +22,13 @@ Feature: Bank
     When Uzivatel prevede castku 2100 kc z prvniho na druhy bankovni ucet
     Then Na uzivatelskem uctu je 2000 kc
     And Na druhem uzivatelskem uctu je 1000 kc
+
+  Scenario Outline: Ucet prevod a vyber penez - vice testovacich dat
+    Given Uzivatel ma bankovni ucet s 1500 kc
+    When Uzivatel si na tento ucet prevede 1000 kc
+    And Uzivatel si z tohoto uctu vybere 2000 kc
+    Then Na uzivatelskem uctu je 500 kc
+
+    Examples:
+      | pocatecniZustatek | prevod | vyber | konecnyZustatek |
+      | 800               | 300    | 600   | 500             |
