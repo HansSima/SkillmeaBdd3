@@ -1,3 +1,4 @@
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -29,4 +30,18 @@ public class BanAccountTest {
         prvniBankovniUcet.withdraw(castkaKVyberu);
     }
 
+    @And("Uzivatel ma druhy bankovni ucet s {int} kc")
+    public void uzivatelMaDruhyBankovniUcetSKc(int arg0) {
+
+    }
+
+    @When("Uzivatel prevede castku {int} kc z prvniho na druhy bankovni ucet")
+    public void uzivatelPrevedeCastkuKcZPrvnihoNaDruhyBankovniUcet(int arg0) {
+
+    }
+
+    @And("Na druhem uzivatelskem uctu je {int} kc")
+    public void naDruhemUzivatelskemUctuJeKc(int arg0) {
+
+    }
 }
