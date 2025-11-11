@@ -4,3 +4,11 @@ Feature: Checkout
     Given Cena "bananu" je 10 kc
     When Uzivatel nakoupi "bananu" v poctu 5 ks
     Then Celkova cena bude 50 kc
+
+  Scenario: Nakup bananu a jablek
+    Given Cena "bananu" je 10 kc
+    And Cena "jablek" je 5 kc
+    When Uzivatel nakoupi "bananu" v poctu 5 ks
+    And Uzivatel nakoupi "jablek" v poctu 2 ks
+    Then Celkova cena bude 60 kc
+
