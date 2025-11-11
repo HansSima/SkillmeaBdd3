@@ -1,4 +1,3 @@
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,11 +21,12 @@ public class BanAccountTest {
 
     @When("Uzivatel si na tento ucet prevede {int} kc")
     public void uzivatelSiNaTentoUcetPrevedeKc(int castkaKPrevodu) {
-
+        prvniBankovniUcet.transfer(castkaKPrevodu);
     }
 
     @And("Uzivatel si z tohoto uctu vybere {int} kc")
     public void uzivatelSiZTohotoUctuVybereKc(int castkaKVyberu) {
-
+        prvniBankovniUcet.withdraw(castkaKVyberu);
     }
+
 }
